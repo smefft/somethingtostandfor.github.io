@@ -197,106 +197,73 @@ export default function SubmitPage() {
       )}
 
       {step === "submission" && (
-        <div className="form-section">
-          <h2>Submission:</h2>
-          <div className="form-box">
-            <p className="form-desc">
-              You can submit your work either through the text box or send a link
-              (e.g. a Google Drive link).
-            </p>
-            <div className="form-group">
-              <label htmlFor="title">Title</label>
-              <input
-                id="title"
-                name="title"
-                type="text"
-                placeholder="Title"
-                value={form.title}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="body">Typed Submission</label>
-              <textarea
-                id="body"
-                name="body"
-                rows={6}
-                placeholder="Typed Submission"
-                value={form.body}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="link">Link Submission</label>
-              <input
-                id="link"
-                name="link"
-                type="url"
-                placeholder="https://www.mysite.com/link"
-                value={form.link}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="form-nav">
-              <button className="btn-primary" onClick={() => setStep("about")}>
-                Next &gt; About you
-              </button>
-            </div>
-          </div>
+        <div style={{ maxWidth: "600px", margin: "0 auto", padding: "2rem 1.5rem", textAlign: "center" }}>
+          <h2 style={{ fontSize: "1.25rem", fontWeight: 700, color: "#1a3a35", marginBottom: "0.5rem" }}>
+            To submit an entry, please send an email to{" "}
+            <a href="mailto:somethingtostandf@gmail.com" style={{ color: "#1a3a35", textDecoration: "underline" }}>
+              somethingtostandf@gmail.com
+            </a>.
+          </h2>
+          <h3 style={{ fontSize: "1rem", fontWeight: 700, color: "#1a3a35", margin: 0 }}>
+            We will respond to let you know whether we will post your entry.
+          </h3>
         </div>
-      )}
+      )
+      }
 
-      {step === "about" && (
-        <div className="form-section">
-          <h2>About You</h2>
-          <div className="form-box">
-            <div className="form-group">
-              <label htmlFor="name">Name (or pen name)</label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                placeholder="How you'd like to be credited"
-                value={form.name}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                placeholder="So we can reach you"
-                value={form.email}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="bio">Short bio (optional)</label>
-              <textarea
-                id="bio"
-                name="bio"
-                rows={3}
-                placeholder="A sentence or two about yourself..."
-                value={form.bio}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="form-nav">
-              <button
-                className="btn-secondary"
-                onClick={() => setStep("submission")}
-              >
-                ← Back
-              </button>
-              <button className="btn-primary" onClick={handleSubmit}>
-                Submit ✓
-              </button>
+      {
+        step === "about" && (
+          <div className="form-section">
+            <h2>About You</h2>
+            <div className="form-box">
+              <div className="form-group">
+                <label htmlFor="name">Name (or pen name)</label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="How you'd like to be credited"
+                  value={form.name}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="email">Email</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="So we can reach you"
+                  value={form.email}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="bio">Short bio (optional)</label>
+                <textarea
+                  id="bio"
+                  name="bio"
+                  rows={3}
+                  placeholder="A sentence or two about yourself..."
+                  value={form.bio}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="form-nav">
+                <button
+                  className="btn-secondary"
+                  onClick={() => setStep("submission")}
+                >
+                  ← Back
+                </button>
+                <button className="btn-primary" onClick={handleSubmit}>
+                  Submit ✓
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      )}
-    </div>
+        )
+      }
+    </div >
   );
 }
