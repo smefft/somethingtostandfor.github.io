@@ -23,6 +23,7 @@ export default function App() {
         {currentPage === "submit" && <SubmitPage navigate={navigate} />}
         {currentPage === "post" && <PostPage post={selectedPost} navigate={navigate} />}
       </main>
-    </div>
+      <div style={{ maxWidth: "60%", fontSize: "0.6em", margin: "0 auto", padding: "2rem 1.5rem", textAlign: "center" }}>The emoji graphics are from the open source project Twemoji: (https://twemoji.twitter.com/). The graphics are copyright 2020 Twitter, Inc and other contributors. The graphics are licensed under CC-BY 4.0 (https://creativecommons.org/licenses/by/4.0/). You should review the license before usage in your project.</div>
+    </div >
   );
 }
